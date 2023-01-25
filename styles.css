@@ -3,9 +3,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-  
+    font-weight: 300; 
 }
+
+/* START SCREEN */
 
 #start-screen {
     background-image: url("/mineful/img/canvas1.jpeg");
@@ -143,4 +144,130 @@ li {
     height: 10px;
     width: 10px;
     list-style-image: url(/mineful/img/mine-bullet.png);
-} */
+} 
+*/
+
+.footer {
+    display: flex;
+    align-items: flex-end;
+    height: 190px;
+    padding-top: 20px;
+}
+
+/* GAME SCREEN */
+
+#game-screen{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(161, 164, 206);
+    height: 100vh;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 2em;
+}
+
+.health-title {
+    font-size: 2em;
+}
+
+.health-bar {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+
+.health-img {
+    height: 260px;
+}
+
+
+.score {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+    padding-left: 200px;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 75px;
+    width: 100vw;
+}
+
+.canvas {}
+
+/* GAME OVER */
+
+#gameover-screen {
+    background-image: url("/mineful/img/canvas4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameover-ctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.end-instruction {
+    color:hsl(104, 41%, 95%);
+    text-align: center;
+    padding-top: 90px;
+    font-weight: normal;
+    font-size: 2.5em;
+}
+
+.kaboom {
+    color: orangered;
+    font-weight: bold;
+    font-size: 3.5em;
+}
+
+.final-score {
+    color: silver;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    padding-top: 20px;
+}
+
+.high-score {
+    color: gold;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    padding-top: 8px;
+}
+
+.restart-button {
+
+}
+
+.restart-img {
+
+}
+
+.message {
+    color: hsl(104, 41%, 95%);
+    font-size: 4em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    border-radius: 50% 20% / 10% 40%;
+}

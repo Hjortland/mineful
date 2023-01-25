@@ -38,7 +38,7 @@
         </div>
             
     <button class="start-button"> <span class="start-cmd">Start game</span>
-        <img class="button-img" src="/mineful/img/mine-bullet.png" alt="press landmine to start">
+        <img class="button-img" src="/mineful/img/landmine.png" alt="press landmine to start">
     </button>
     
     <div class="footer">
@@ -50,13 +50,13 @@
     </div>
         
 <!-- PLAY SCREEN -->
-    <div id="play-screen">
+    <div id="game-screen">
         <div class="status">
-            <article class="strength-bar">
-                <p class="strength-title">Strength: </p>
-                <img src="" class ="strength-bar-img">
+            <article class="health-bar">
+                <p class="health-title">Health: </p>
+                <img src="/mineful/img/GreenBar.png" class ="health-img">
             </article>
-             <article class="score">Score: -    <span style = "font-size: 35px">0</span></article>
+             <article class="score">Score: <span>0</span></article>
         </div>
         <div class = game-board>
             <canvas id="canvas" width="1920" height="800"></canvas>
@@ -66,8 +66,9 @@
 <!-- GAME OVER SCREEN-->
     <div id="gameover-screen">
             <div class="gameover-ctr">
-                <p class="end-instructions">Kaboom 💥 <br>
-                The minesweeping mission blew up and you need to restart to continue playing.</p>
+                <p class="end-instruction kaboom">Kaboom💥</p>
+                <p class="end-instruction"> 
+                The minesweeping mission failed :( <br> You must restart to continue playing.</p>
                 <div class="final-score"> Your final score: </div>
                 <div class="high-score">High score: </div>
                 <div>

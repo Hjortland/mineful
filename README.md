@@ -28,5 +28,14 @@ Clickup backlog: https://app.clickup.com/9004026167/v/li/900400263661
 Pitch (Google Slides): https://t.ly/Uckl 
 
 Github repository: https://github.com/Hjortland/mineful
+
 Deployment Link
 
+Icons and images 
+<a href="https://www.flaticon.com/free-icons/life-bar" title="life bar icons">Life bar icons created by Bamicon - Flaticon</a>
+
+https://opengameart.org/content/minimalist-bar-system-0 
+
+freepik.com
+
+stock.adobe.com 

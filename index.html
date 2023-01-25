@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mineful</title>
+        <link rel="icon" href="">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- START SCREEN -->
+        <div id="start-screen">
+            <header class="header">
+                <h1>Mineful</h1>
+            </header>
+        <div class="instructions">
+            <div>
+                <h2>How to play</h2>
+                <p>Help the minesweeper to sweep through the fields without bumping into 
+                   the landmines. Collect resources to boost endurance
+                   and keep the minesweeper going.   
+                </p>
+
+            </div>
+            <div class="controls">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div><img class="keyboard-img" src="" alt="">
+                </div>
+            </div>
+            <button id="start-button">
+                <img class="button-img" src="" alt="">
+            </button>
+            <div class="footer">
+                <div class="">
+                    <img class="" src="" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- GAMEPLAY SCREEN -->
+        <div>
+            <div class="status">
+                <article class="strength-bar">
+                <p class="strength-title">Strength: </p>
+                <img src="" class ="strength-bar-img">
+                </article>
+                <article class="score">Score -    <span style = "font-size: 35px">0</span></article>
+            </div>
+        <div class = game-board>
+            <canvas id="canvas" width="1920" height="800"></canvas>
+        </div>
+        </div>
+        <!-- GAME OVER SCREEN-->
+        <div id="gameover-screen">
+            <div class="gameover-ctr">
+                <p class="end-instructions"></p>
+                <div class="final-score"></div>
+                <div class="high-score"></div>
+                <div>
+                    <p class=""></p>
+                </div>
+            <button id="restart-button">
+                <img class="" src="" alt="">
+            </button>
+            </div>
+        </div>
+        <script src="./src/index.js"></script>
+    </body>
+</html>

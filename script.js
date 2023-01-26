@@ -10,13 +10,13 @@ const ctx = canvas.getContext('2d');
 // BACKGROUND IMAGES
 
 const backgroundImg1 = new Image(); 
-backgroundImg1.src = './img/canvas1.jpeg'
+backgroundImg1.src = '/img/canvas1.jpeg'
 const backgroundImg2 = new Image();
-backgroundImg2.src = './img/canvas2.jpg' 
+backgroundImg2.src = '/img/canvas2.jpg' 
 const backgroundImg3 = new Image(); 
-backgroundImg3.src = './img/canvas3.jpg'
+backgroundImg3.src = '/img/canvas3.jpg'
 const backgroundImg4 = new Image(); 
-backgroundImg4.src = './img/canvas4.png'
+backgroundImg4.src = '/img/canvas4.png'
 
 // canvas.width and canvas.height could be defined as variables, but I chose not to. 
 
@@ -29,7 +29,7 @@ let backgroundMove = -3;
 // MINESWEEPER - GAME CHARACTER
 
 const minesweeper = new Image(); 
-minesweeper.src = './img/bombsuit.png'
+minesweeper.src = '/img/bombsuit.png'
 let minesweeperWidth = 150; 
 let minesweeperHeight = 250; 
 let minesweeperStartX = 20; 

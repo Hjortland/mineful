@@ -10,13 +10,13 @@ const ctx = canvas.getContext('2d');
 // BACKGROUND IMAGES
 
 const backgroundImg1 = new Image(); 
-backgroundImg1.src = '/img/canvas1.jpeg'
+backgroundImg1.src = 'img/canvas1.jpeg'
 const backgroundImg2 = new Image();
-backgroundImg2.src = '/img/canvas2.jpg' 
+backgroundImg2.src = 'img/canvas2.jpg' 
 const backgroundImg3 = new Image(); 
-backgroundImg3.src = '/img/canvas3.jpg'
+backgroundImg3.src = 'img/canvas3.jpg'
 const backgroundImg4 = new Image(); 
-backgroundImg4.src = '/img/canvas4.png'
+backgroundImg4.src = 'img/canvas4.png'
 
 // canvas.width and canvas.height could be defined as variables, but I chose not to. 
 
@@ -29,7 +29,7 @@ let backgroundMove = -3;
 // MINESWEEPER - GAME CHARACTER
 
 const minesweeper = new Image(); 
-minesweeper.src = '/img/bombsuit.png'
+minesweeper.src = 'img/bombsuit.png'
 let minesweeperWidth = 150; 
 let minesweeperHeight = 250; 
 let minesweeperStartX = 20; 
@@ -43,24 +43,24 @@ let minesweeperMoveLeft = -8;
 
 // OBSTACLES - RESOURCES
 const detectorImg = new Image(); 
-detectorImg.src = '/img/detector.png'
+detectorImg.src = 'img/detector.png'
 
 const bitcoinImg = new Image();
-bitcoinImg.src = '/img/bitcoin.png' 
+bitcoinImg.src = 'img/bitcoin.png' 
 
 const therapyImg = new Image(); 
-therapyImg.src = '/img/therapy.png'
+therapyImg.src = 'img/therapy.png'
 
 const chocolateImg = new Image(); 
-chocolateImg.src = '/img/chocolate.png'
+chocolateImg.src = 'img/chocolate.png'
 
 // OBSTACLES - DANGERS
 
 const landmineImg = new Image(); 
-landmineImg.src = '/img/landmine.png'
+landmineImg.src = 'img/landmine.png'
 
 const landminesImg = new Image(); 
-landminesImg.src = '/img/landmines.png'
+landminesImg.src = 'img/landmines.png'
 
 // IMAGE SIZING
 
@@ -242,11 +242,11 @@ const drawResource = () => {
         if ((resource.img === detectorImg || bitcoinImg || therapyImg ||chocolateImg) && healthCounter < 3) {
             healthCounter += 1;
             if (healthCounter === 3) {
-                countHealth.setAttribute('src', '/img/GreenBar.png')
+                countHealth.setAttribute('src', 'img/GreenBar.png')
             } else if (healthCounter === 2) {
-                countHealth.setAttribute('src', '/img/YellowBar.png')
+                countHealth.setAttribute('src', 'img/YellowBar.png')
             } else if (healthCounter === 1) {
-                countHealth.setAttribute('src', '/img/RedBar.png')
+                countHealth.setAttribute('src', 'img/RedBar.png')
             }
         }
         else {
@@ -275,11 +275,11 @@ const drawDanger = () => {
             } else {danger.x = Math.floor(Math.random() * ((canvas.width * 3) - (canvas.width * 1.5) + 1) + (canvas.width * 1.5))}
          // check out line 282, it might have a closing curly bracket set by mistake  
          if (healthCounter === 3) {
-            countHealth.setAttribute('src', '/img/GreenBar.png') }
+            countHealth.setAttribute('src', 'img/GreenBar.png') }
          else if (healthCounter === 2) {
-            countHealth.setAttribute('src', '/img/YellowBar.png') }
+            countHealth.setAttribute('src', 'img/YellowBar.png') }
          else if (healthCounter === 1) {
-            countHealth.setAttribute('src', '/img/RedBar.png')}
+            countHealth.setAttribute('src', 'img/RedBar.png')}
          };   
          })
     }
@@ -341,7 +341,7 @@ document.getElementById('restart-button').onclick = () => {
     healthCounter = 0; 
     scoreCounter = 0; 
     scoreValue.innerText = 0; 
-    countHealth.setAttribute('src', '/img/RedBar.png');
+    countHealth.setAttribute('src', 'img/RedBar.png');
     gameOverMessage.innerText = '';
 
     startGame();

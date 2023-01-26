@@ -218,13 +218,14 @@ const drawMinesweeper = () => {ctx.drawImage(minesweeper, minesweeperStartX, min
 };
 
 const moveMinesweeperX = () => {
-    if (minesweeperStartX + minesweeperMoveX >= 0 && minesweeperStartX + minesweeperMoveX <= canvas.width - minesweeperWidth) {
-        minesweeperStartX += minesweeperMoveX
-    }
-}; 
+    if (minesweeperStartX + minesweeperMoveX >= 0 && minesweeperStartX + minesweeperMoveX <= canvas.width - minesweeperWidth) 
+        minesweeperStartX += minesweeperMoveX;
+    } 
 
 const moveMinesweeperY = () => {
-    if (minesweeperStartY + minesweeperMoveY >= 0 && minesweeperStartY + minesweeperMoveY <= canvas.height - minesweeperHeight); 
+    if (minesweeperStartY + minesweeperMoveY >= 0 && minesweeperStartY + minesweeperMoveY <= canvas.height - minesweeperHeight) {
+minesweeperStartY += minesweeperMoveY;
+}}
 
 const drawResource = () => {
     resourcesArray.forEach(resource => {
@@ -346,4 +347,3 @@ document.getElementById('restart-button').onclick = () => {
 
     startGame();
 }
-} 

@@ -225,7 +225,7 @@ minesweeperStartY += minesweeperMoveY;
 }}
 
 function drawResource() {
-    resourcesArray.forEach(resource => {
+    resourcesArray.forEach(resource() {
         ctx.drawImage(resource.img, resource.x, resource.y, resource.width, resource.height)
         resource.x += resourcesMove;
         if (resource.x < 0) {
@@ -282,7 +282,7 @@ function drawDanger() {
     }
 
 // EVENT LISTENERS
-document.addEventListener('keydown', event => {
+document.addEventListener('keydown', function event() {
     if (event.key === 'ArrowUp') {
         minesweeperMoveY = minesweeperMoveUp;
     }
@@ -298,7 +298,7 @@ document.addEventListener('keydown', event => {
 
 } );
 
-document.addEventListener('keyup', event => {
+document.addEventListener('keyup', function event() {
     minesweeperMoveX = 0; 
     minesweeperMoveY = 0; 
 })

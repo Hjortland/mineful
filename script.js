@@ -113,16 +113,16 @@ const gameOverMessage = document.querySelector('.message');
 // ON LOAD
 window.onload = () => {
 // Start button
-document.getElementById('start-button').onclick = () => { startGame() };
+document.getElementById('start-button').onclick = function() { startGame() };
 
-const startGame = () => {
+function startGame() {
     startScreen.style.display = 'none'
     gameScreen.style.display = 'block'
     gameOverScreen.style.display = 'none'
     animate();
 }
 
-const animate = () => {
+function animate() {
     animateBackground();
     gameId = requestAnimationFrame(animate)
     if (gameId % 500 === 0 && resourcesMove >= -5 && dangerMove >= -5) {
@@ -157,7 +157,7 @@ const animate = () => {
 }; 
 
 // ANIMATIONS
-const animateBackground = () => {
+function animateBackground() {
 clearCanvas(); 
 drawCanvas();
 moveCanvas(); 
@@ -175,9 +175,9 @@ drawDanger();
 };
 
 // CANVAS
-const clearCanvas = () => {ctx.clearRect(0, 0, canvas.width, canvas.height)};
-const drawCanvas = () => {ctx.drawImage(backgroundImg1, backgroundImg1Start, 0, canvas.width, canvas.height)};
-const moveCanvas = () => {
+function clearCanvas() {ctx.clearRect(0, 0, canvas.width, canvas.height)};
+function drawCanvas() {ctx.drawImage(backgroundImg1, backgroundImg1Start, 0, canvas.width, canvas.height)};
+function moveCanvas() {
     let backgroundCurrentPosition = backgroundImg1Start += backgroundMove;
     if (backgroundImg1Start >= canvas.width) {
         backgroundCurrentPosition;
@@ -185,8 +185,8 @@ const moveCanvas = () => {
         backgroundImg1Start = canvas.width * 4;
     }
 };
-const drawCanvas2 = () => {ctx.drawImage(backgroundImg2, backgroundImg2Start, 0, canvas.width, canvas.height)};
-const moveCanvas2 = () => {
+function drawCanvas2() {ctx.drawImage(backgroundImg2, backgroundImg2Start, 0, canvas.width, canvas.height)};
+function moveCanvas2() {
     let backgroundCurrentPosition = backgroundImg2Start += backgroundMove;
     if (backgroundImg2Start >= canvas.width) {
         backgroundCurrentPosition;
@@ -194,18 +194,16 @@ const moveCanvas2 = () => {
         backgroundImg2Start = canvas.width * 4;
     }
 }; 
-const drawCanvas3 = () => {ctx.drawImage(backgroundImg3, backgroundImg3Start, 0, canvas.width, canvas.height)};
-const moveCanvas3 = () => {
-    let backgroundCurrentPosition = backgroundImg3Start += backgroundMove;
+function drawCanvas3() {ctx.drawImage(backgroundImg3, backgroundImg3Start, 0, canvas.width, canvas.height)};
+function moveCanvas3() {let backgroundCurrentPosition = backgroundImg3Start += backgroundMove;
     if (backgroundImg3Start >= canvas.width) {
         backgroundCurrentPosition;
     } else {
         backgroundImg3Start = canvas.width * 4;
     }
 }; 
-const drawCanvas4 = () => {ctx.drawImage(backgroundImg4, backgroundImg4Start, 0, canvas.width, canvas.height)};
-const moveCanvas4 = () => {
-    let backgroundCurrentPosition = backgroundImg4Start += backgroundMove;
+function drawCanvas4() {ctx.drawImage(backgroundImg4, backgroundImg4Start, 0, canvas.width, canvas.height)};
+function moveCanvas4() {let backgroundCurrentPosition = backgroundImg4Start += backgroundMove;
     if (backgroundImg4Start >= canvas.width) {
         backgroundCurrentPosition;
     } else {
@@ -214,20 +212,19 @@ const moveCanvas4 = () => {
 };
 
 // MINESWEEPING 🥵
-const drawMinesweeper = () => {ctx.drawImage(minesweeper, minesweeperStartX, minesweeperStartY, minesweeperWidth, minesweeperHeight)
-};
+function drawMinesweeper() {ctx.drawImage(minesweeper, minesweeperStartX, minesweeperStartY, minesweeperWidth, minesweeperHeight)};
 
-const moveMinesweeperX = () => {
+function moveMinesweeperX() {
     if (minesweeperStartX + minesweeperMoveX >= 0 && minesweeperStartX + minesweeperMoveX <= canvas.width - minesweeperWidth) 
         minesweeperStartX += minesweeperMoveX;
     } 
 
-const moveMinesweeperY = () => {
+function moveMinesweeperY() {
     if (minesweeperStartY + minesweeperMoveY >= 0 && minesweeperStartY + minesweeperMoveY <= canvas.height - minesweeperHeight) {
 minesweeperStartY += minesweeperMoveY;
 }}
 
-const drawResource = () => {
+function drawResource() {
     resourcesArray.forEach(resource => {
         ctx.drawImage(resource.img, resource.x, resource.y, resource.width, resource.height)
         resource.x += resourcesMove;
@@ -258,7 +255,7 @@ const drawResource = () => {
         });
         } 
 
-const drawDanger = () => {
+function drawDanger() {
     dangerArray.forEach(danger => {
         ctx.drawImage(danger.img, danger.x, danger.y, danger.width, danger.height)
         danger.x += dangerMove; 
@@ -274,8 +271,7 @@ const drawDanger = () => {
                 danger.x = Math.floor(Math.random() * ((canvas.width * 3) - (canvas.width * 1.5) + 1) + (canvas.width * 1.5))
                 isGameOver = true; 
             } else {danger.x = Math.floor(Math.random() * ((canvas.width * 3) - (canvas.width * 1.5) + 1) + (canvas.width * 1.5))}
-         // check out line 282, it might have a closing curly bracket set by mistake  
-         if (healthCounter === 3) {
+            if (healthCounter === 3) {
             countHealth.setAttribute('src', 'img/GreenBar.png') }
          else if (healthCounter === 2) {
             countHealth.setAttribute('src', 'img/YellowBar.png') }

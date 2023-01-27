@@ -1,22 +1,22 @@
 // GLOBAL SCOPE
-const startScreen = document.getElementById("start-screen");
-const gameScreen = document.getElementById("game-screen");
-const gameOverScreen = document.getElementById("gameover-screen");
-const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
+const startScreen = document.getElementById('start-screen');
+const gameScreen = document.getElementById('game-screen');
+const gameOverScreen = document.getElementById('gameover-screen');
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
 
 // AUDIO
 
 // BACKGROUND IMAGES
 
 const backgroundImg1 = new Image();
-backgroundImg1.src = "img/canvas1.jpeg";
+backgroundImg1.src = 'img/canvas1.jpeg';
 const backgroundImg2 = new Image();
-backgroundImg2.src = "img/canvas2.jpg";
+backgroundImg2.src = 'img/canvas2.jpg';
 const backgroundImg3 = new Image();
-backgroundImg3.src = "img/canvas3.jpg";
+backgroundImg3.src = 'img/canvas3.jpg';
 const backgroundImg4 = new Image();
-backgroundImg4.src = "img/canvas4.png";
+backgroundImg4.src = 'img/canvas4.png';
 
 // canvas.width and canvas.height could be defined as variables, but I chose not to.
 
@@ -29,7 +29,7 @@ let backgroundMove = -3;
 // MINESWEEPER - GAME CHARACTER
 
 const minesweeper = new Image();
-minesweeper.src = "img/bombsuit.png";
+minesweeper.src = 'img/bombsuit.png';
 let minesweeperWidth = 150;
 let minesweeperHeight = 250;
 let minesweeperStartX = 20;
@@ -43,24 +43,24 @@ let minesweeperMoveLeft = -8;
 
 // OBSTACLES - RESOURCES
 const detectorImg = new Image();
-detectorImg.src = "img/detector.png";
+detectorImg.src = 'img/detector.png';
 
 const bitcoinImg = new Image();
-bitcoinImg.src = "img/bitcoin.png";
+bitcoinImg.src = 'img/bitcoin.png';
 
 const therapyImg = new Image();
-therapyImg.src = "img/therapy.png";
+therapyImg.src = 'img/therapy.png';
 
 const chocolateImg = new Image();
-chocolateImg.src = "img/chocolate.png";
+chocolateImg.src = 'img/chocolate.png';
 
 // OBSTACLES - DANGERS
 
 const landmineImg = new Image();
-landmineImg.src = "img/landmine.png";
+landmineImg.src = 'img/landmine.png';
 
 const landminesImg = new Image();
-landminesImg.src = "img/landmines.png";
+landminesImg.src = 'img/landmines.png';
 
 // IMAGE SIZING
 let detectorWidth = 80;
@@ -146,36 +146,34 @@ let gameId = 0;
 let isGameOver = false;
 
 // HEALTH & SCORE
-const health = document.querySelector(".health-bar");
-const countHealth = document.querySelector(".health-img");
+const health = document.querySelector('.health-bar');
+const countHealth = document.querySelector('.health-img');
 let healthCounter = 0;
 
-const score = document.querySelector(".score");
-const scoreValue = document.querySelector(".score span");
-const finalScore = document.querySelector(".final-score");
-const highScore = document.querySelector(".high-score");
+const score = document.querySelector('.score');
+const scoreValue = document.querySelector('.score span');
+const finalScore = document.querySelector('.final-score');
+const highScore = document.querySelector('.high-score');
 let scoreCounter = 0;
 let highScoreCounter = 0;
 
-const gameOverMessage = document.querySelector(".message");
+const gameOverMessage = document.querySelector('.message');
 
 // ON LOAD
 window.onload = () => {
   // Start button
-  document.getElementById("start-button").onclick = function () {
-    startGame();
-  };
+  document.getElementById('start-button').onclick = function () {startGame()}
 
   function startGame() {
-    startScreen.style.display = "none";
-    gameScreen.style.display = "block";
-    gameOverScreen.style.display = "none";
+    startScreen.style.display = 'none';
+    gameScreen.style.display = 'block';
+    gameOverScreen.style.display = 'none';
     animate();
   }
 
   function animate() {
     animateBackground();
-    gameId = requestAnimationFrame(animate);
+    gameId = requestAnimationFrame(animate)
     if (gameId % 500 === 0 && resourcesMove >= -5 && dangerMove >= -5) {
       resourcesMove -= 0.25;
       dangerMove -= 0.25;
@@ -192,18 +190,18 @@ window.onload = () => {
 
       // Game over
       if (scoreCounter >= 0 && scoreCounter <= 5) {
-        gameOverMessage.innerText = "Detonation! Mission aborted.";
+        gameOverMessage.innerText = 'Detonation! Mission aborted.';
       } else if (scoreCounter >= 6 && scoreCounter <= 10) {
         gameOverMessage.innerText = `You're truly mine blowing!`;
       } else {
-        gameOverMessage.innerText = "Back to base.";
+        gameOverMessage.innerText = 'Back to base.';
       }
 
       clearCanvas();
       cancelAnimationFrame(gameId);
-      startScreen.style.display = "none";
-      gameScreen.style.display = "none";
-      gameOverMessage.style.display = "block";
+      startScreen.style.display = 'none';
+      gameScreen.style.display = 'none';
+      gameOverMessage.style.display = 'block';
     }
   }
 };
@@ -329,7 +327,7 @@ function moveMinesweeperY() {
 }
 
 function drawResource() {
-  resourcesArray.forEach((resource) => {
+  resourcesArray.forEach(resource => {
     ctx.drawImage(
       resource.img,
       resource.x,
@@ -364,15 +362,15 @@ function drawResource() {
     ) {
       healthCounter += 1;
       if (healthCounter === 3) {
-        countHealth.setAttribute("src", "img/GreenBar.png");
+        countHealth.setAttribute('src', 'img/GreenBar.png');
       } else if (healthCounter === 2) {
-        countHealth.setAttribute("src", "img/YellowBar.png");
+        countHealth.setAttribute('src', 'img/YellowBar.png');
       } else if (healthCounter === 1) {
-        countHealth.setAttribute("src", "img/RedBar.png");
+        countHealth.setAttribute('src', 'img/RedBar.png');
       }
     } else {
       healthCounter += 1;
-      scoreValue.setAttribute("style");
+      scoreValue.setAttribute('style', 'font-size: 1em'); /* added second value font-size */ 
       scoreValue.innerText = `${scoreCounter}`;
     }
   });
@@ -407,39 +405,39 @@ function drawDanger() {
         );
       }
       if (healthCounter === 3) {
-        countHealth.setAttribute("src", "img/GreenBar.png");
+        countHealth.setAttribute('src', 'img/GreenBar.png');
       } else if (healthCounter === 2) {
-        countHealth.setAttribute("src", "img/YellowBar.png");
+        countHealth.setAttribute('src', 'img/YellowBar.png');
       } else if (healthCounter === 1) {
-        countHealth.setAttribute("src", "img/RedBar.png");
+        countHealth.setAttribute('src', 'img/RedBar.png');
       }
     }
   });
 }
 
 // EVENT LISTENERS
-document.addEventListener("keydown", function (event) {
-  if (event.key === "ArrowUp") {
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'ArrowUp') {
     minesweeperMoveY = minesweeperMoveUp;
-  } else if (event.key === "ArrowDown") {
+  } else if (event.key === 'ArrowDown') {
     minesweeperMoveY = minesweeperMoveDown;
-  } else if (event.key === "ArrowRight") {
+  } else if (event.key === 'ArrowRight') {
     minesweeperMoveX = minesweeperMoveRight;
-  } else if (event.key === "ArrowLeft") {
+  } else if (event.key === 'ArrowLeft') {
     minesweeperMoveX = minesweeperMoveLeft;
   }
 });
 
-document.addEventListener("keyup", function (event) {
+document.addEventListener('keyup', function (event) {
   minesweeperMoveX = 0;
   minesweeperMoveY = 0;
 });
 
-gameScreen.style.display = "none";
-gameOverScreen.style.display = "none";
+gameScreen.style.display = 'none';
+gameOverScreen.style.display = 'none';
 
 // RESTART
-document.getElementById("restart-button").onclick = () => {
+document.getElementById('restart-button').onclick = () => {
   clearCanvas();
   backgroundImg1Start = 0;
   backgroundImg2Start = canvas.width;
@@ -530,8 +528,8 @@ document.getElementById("restart-button").onclick = () => {
   healthCounter = 0;
   scoreCounter = 0;
   scoreValue.innerText = 0;
-  countHealth.setAttribute("src", "img/RedBar.png");
-  gameOverMessage.innerText = "";
+  countHealth.setAttribute('src', 'img/RedBar.png');
+  gameOverMessage.innerText = '';
 
   startGame();
 };

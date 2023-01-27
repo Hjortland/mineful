@@ -76,6 +76,7 @@ let landmineHeight = 80;
 let landminesWidth = 100;
 let landminesHeight = 85;
 let resourcesMove = -3.5;
+let dangerMove = -3.5;  
 
 let resourcesArray = [
   {
@@ -159,15 +160,13 @@ let highScoreCounter = 0;
 
 const gameOverMessage = document.querySelector('.message');
 
-// ON LOAD
-window.onload = () => {
-  // Start button
-  document.getElementById('start-button').onclick = function () {startGame()}
+// ON LOAD - Start button
+window.onload = () => {document.getElementById('start-button').onclick = () => {startGame()}
 
   function startGame() {
-    startScreen.style.display = 'none';
-    gameScreen.style.display = 'block';
-    gameOverScreen.style.display = 'none';
+    startScreen.style.display = 'none'
+    gameScreen.style.display = 'block'
+    gameOverScreen.style.display = 'none'
     animate();
   }
 
@@ -222,7 +221,7 @@ function animateBackground() {
   moveMinesweeperY();
   drawResource();
   drawDanger();
-}
+};
 
 // CANVAS
 function clearCanvas() {
@@ -377,7 +376,7 @@ function drawResource() {
 }
 
 function drawDanger() {
-  dangerArray.forEach((danger) => {
+  dangerArray.forEach(danger => {
     ctx.drawImage(danger.img, danger.x, danger.y, danger.width, danger.height);
     danger.x += dangerMove;
     if (danger.x < 0) {
